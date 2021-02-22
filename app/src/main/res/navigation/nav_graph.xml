@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.kevicsalazar.globant.devtest.presentation.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_newsListFragment"
+            app:destination="@id/newsListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsListFragment"
+        android:name="com.kevicsalazar.globant.devtest.presentation.list.NewsListFragment"
+        android:label="NewsListFragment"
+        tools:layout="@layout/fragment_news_list">
+        <action
+            android:id="@+id/action_newsListFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+        <action
+            android:id="@+id/action_newsListFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.kevicsalazar.globant.devtest.presentation.detail.NewsDetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_news_detail" />
+
+</navigation>
