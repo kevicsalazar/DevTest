@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.kevicsalazar.globant.devtest.R
 import com.kevicsalazar.globant.devtest.domain.entities.NewsItem
 import kotlinx.android.synthetic.main.item_news.view.*
@@ -39,6 +40,7 @@ class NewsListAdapter : RecyclerView.Adapter<NewsListAdapter.ViewHolder>() {
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(item: NewsItem) {
             itemView.tvTitle.text = item.title
+            itemView.ivImage.load(item.imageUrl)
             itemView.setOnClickListener { onItemClick.invoke(item.id) }
         }
     }

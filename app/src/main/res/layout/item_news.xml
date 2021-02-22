@@ -6,12 +6,23 @@
     android:foreground="?attr/selectableItemBackground"
     android:padding="16dp">
 
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="V,1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivImage"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

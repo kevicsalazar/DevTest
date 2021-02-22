@@ -6,8 +6,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import coil.load
 import com.kevicsalazar.globant.devtest.R
 import com.kevicsalazar.globant.devtest.domain.entities.NewsDetailItem
+import com.kevicsalazar.globant.devtest.presentation.utils.setHtmlText
 import kotlinx.android.synthetic.main.fragment_news_detail.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -43,6 +45,8 @@ class NewsDetailFragment : Fragment(R.layout.fragment_news_detail) {
 
     private fun updateView(item: NewsDetailItem) {
         tvTitle.text = item.title
+        tvDescription.setHtmlText(item.body)
+        ivImage.load(item.imageUrl)
     }
 
     private fun showError() {
